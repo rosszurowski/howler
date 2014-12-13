@@ -5,5 +5,5 @@ var v = new Voice();
 
 window.bind('keydown', function(e) {
 	if (e.ctrlKey || e.metaKey || e.shiftKey) return;
-	v.play({rate:e.which/120});
+	v.play({ rate: e.which/120 });
 });
