@@ -1,0 +1,17 @@
+{
+  "name": "howler",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "duo-sass": "^1.2.1"
+  },
+  "scripts": {
+    "watch": "duo --use duo-sass --watch index.js > build/index.js",
+    "build": "duo --use duo-sass index.js > build/index.js",
+    "test": ""
+  },
+  "author": "",
+  "license": "ISC"
+}
