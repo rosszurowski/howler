@@ -5,13 +5,35 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "duo-sass": "^1.2.1"
+    "app-root-path": "^1.0.0",
+    "colors": "^1.0.3",
+    "del": "^1.1.0",
+    "duo": "^0.9.0",
+    "duo-autoprefixer": "^1.0.0",
+    "duo-sass": "^1.2.1",
+    "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^2.0.0",
+    "gulp-csso": "^0.2.9",
+    "gulp-duo": "^0.2.0",
+    "gulp-if": "^1.2.5",
+    "gulp-jshint": "^1.9.0",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-sass": "^1.2.4",
+    "gulp-uglify": "^1.0.2",
+    "gulp-watch": "^3.0.0",
+    "jshint-stylish": "^1.0.0",
+    "lodash": "^2.4.1",
+    "lodash-deep": "^1.4.2",
+    "map-stream": "0.0.5",
+    "run-sequence": "^1.0.2",
+    "traverse": "^0.6.6"
   },
   "scripts": {
-    "watch": "duo --use duo-sass --watch index.js > build/index.js",
-    "build": "duo --use duo-sass index.js > build/index.js",
+    "watch": "gulp watch",
+    "build": "gulp build",
     "test": ""
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
