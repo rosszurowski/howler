@@ -1,45 +1,62 @@
 var Voice = require('./voice');
+var random = require('./random');
 var prototypes = require('rosszurowski/prototypes:/prototypes.js');
 
-var v = window.v = new Voice({ volume: 0.3 });
+var voice = new Voice({ volume: 0.4 });
 var canvas = document.find('.canvas');
+var delay = setTimeout;
 var letters = [];
-var distance = 20;
+var distance = 25;
+var next;
 
-function add() {
-	var value = random(0,9);
-	var el = construct(Math.floor(value));
-	letters.push(el);
-	el.style.opacity = 1.0;
-	canvas.appendChild(el);
+window.bind('keydown', type);
+
+loop();
+
+function loop() {
+	next = delay(
+		add.bind(window,
+			Math.floor(random(0, 9))),
+		random(400, 2100));
+}
+
+function type(e) {
+	// only number keys
+	if (e.which < 47 || e.which > 59) return;
+	clearTimeout(next);
+	add(String.fromCharCode(e.which));
+}
+
+function add(int) {
+	var letter = construct(int);
+	letters.push(letter);
+	canvas.appendChild(letter);
 	if (canvas.scrollHeight > window.innerHeight) {
-		setTimeout(clear, 400);
-		v.play({ rate: 0.01 });
+		delay(clear, 400);
+		voice.play({ rate: 0.01 });
 	} else {
 		letters.forEach(function(el, index) {
 			el.style.opacity = nerp(3, 0, 1, distance / (letters.length - index));
 		});
-		v.play({ rate: (value / 4.5) });
+		voice.play({ rate: (int / 4.5) });
 	}
-	setTimeout(add, random(400, 2100));
+	loop();
 }
 
 function clear() {
-	letters.forEach(function(el) {
-		el.remove();
-	});
+	letters.forEach(function(el) { el.remove(); });
 	letters = [];
 }
 
-setTimeout(add, random(1000, 1500));
-
-function random(min, max) {
-	return (Math.random() * (max - min) + min).toFixed(2);
-}
-
+/**
+ * Construct letterforms
+ * @param {String} text
+ * @returns {HTMLElement}
+ */
 function construct(text) {
 	var el = document.createElement('span');
 	el.textContent = text;
+	el.style.opacity = 1.0;
 	return el;
 }
 
