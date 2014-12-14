@@ -1,0 +1,6 @@
+production:
+  host: "rosszurowski.com"
+  user: "rosszurowski"
+  path:
+    local: "/build/"
+    remote: "/www/rosszurowski.com/howl/"
