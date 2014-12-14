@@ -3,7 +3,7 @@ html, body { margin: 0; padding: 0; }
 body {
 	background: #202020;
 	color: #aaa;
-	font-family: "AtlasTypewriterRegular", monospace;
+	font-family: "AtlasTypewriter", monospace;
 	}
 	
 .canvas {
@@ -29,4 +29,15 @@ body {
 @keyframes enter {
 	0%   { opacity: 0.0; transform: translateY(15%) scale(0.95); }
 	100% { opacity: 1.0; transform: translateY(0%) scale(1.0); }
+}
+
+@font-face {
+	font-family: 'AtlasTypewriter';
+	src: url('fonts/atlas-typewriter-regular.eot');
+	src: url('fonts/atlas-typewriter-regular.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/atlas-typewriter-regular.woff2') format('woff2'),
+	     url('fonts/atlas-typewriter-regular.woff') format('woff'),
+	     url('fonts/atlas-typewriter-regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }

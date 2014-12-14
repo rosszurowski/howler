@@ -31,7 +31,7 @@ var config = prefix({
 		entry: 'css/styles.scss',
 		src: 'css/**/*.scss' },
 	assets: {
-		src: ['index.html', 'tone.mp3']
+		src: ['index.html', 'tone.mp3', 'css/fonts/**/*']
 	}}, ['js', 'css', 'html', 'assets']);
 
 /**
