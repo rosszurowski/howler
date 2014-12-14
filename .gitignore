@@ -1,6 +1,7 @@
 node_modules
 components/
 build/
+resources/
 npm-debug.log
 coverage.html
 .DS_Store
